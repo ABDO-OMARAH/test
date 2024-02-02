@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test-Dark_mode</title>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">logo</div>
+        <ion-icon class="click-btn" name="sunny-outline"></ion-icon>
+
+    </nav>
+    <div class="box">
+      <h1>hello my friend</h1>
+      <p>
+        hello my friend my name is abdullah mamdouh i will tell you somethings
+        this somethings i think it is very important for you i will tell you i
+        am make a new design for website
+      </p>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(".click-btn").click(function(){
+        $('body').toggleClass('dark-mode');
+        if($("body").hasClass("dark-mode")){
+           $(".click-btn").attr("name", "sunny-outline");
+        }else {
+            $(".click-btn").attr("name", "moon-outline");
+ 
+        }
+
+      })
+    </script>
+  </body>
+</html>

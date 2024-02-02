@@ -1,0 +1,57 @@
+:root {
+  --cl:#030f1d;
+  --bl:#ddd;
+}
+
+.dark-mode {
+  --cl:#ddd;
+  --bl:#030f1d;
+}
+
+* {
+  padding: 0;
+  margin: 0%;
+  box-sizing: border-box;
+}
+* body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+* body nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: var(--cl);
+  color: var(--bl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  font-size: 2rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+* body nav .click-btn {
+  cursor: pointer;
+}
+* body .box {
+  width: 300px;
+  height: 250px;
+  background-color: var(--cl);
+  color: var(--bl);
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+}
+* body .box p {
+  font-family: sans-serif;
+}
+* body .box h1 {
+  font-family: monospace;
+}/*# sourceMappingURL=style.css.map */
