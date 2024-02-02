@@ -9,8 +9,7 @@
   <body>
     <nav>
         <div class="logo">logo</div>
-        <ion-icon class="click-btn" name="sunny-outline"></ion-icon>
-
+        <span id="btn"> <ion-icon class="click-btn" name="moon-outline"></ion-icon></span>
     </nav>
     <div class="box">
       <h1>hello my friend</h1>
@@ -22,18 +21,34 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-      $(".click-btn").click(function(){
-        $('body').toggleClass('dark-mode');
-        if($("body").hasClass("dark-mode")){
-           $(".click-btn").attr("name", "sunny-outline");
+      const darkmodebtn = document.getElementById("btn");
+      let theme = localStorage.getItem('theme');
+      if (theme === 'dark') enable_dark_mode();
+   
+      darkmodebtn.addEventListener('click', () => {
+         let theme = localStorage.getItem('theme');
+         if (theme === 'dark') {
+            diable_dark_mode();
+  
         }else {
-            $(".click-btn").attr("name", "moon-outline");
- 
-        }
-
+             enable_dark_mode();
+         }
       })
+      function enable_dark_mode() {
+        darkmodebtn.innerHTML =' <ion-icon id= "btn" class="click-btn" name="sunny-outline"></ion-icon>'
+            localStorage.setItem('theme' , 'dark');
+            document.body.classList.add('dark-mode')
+      }
+      function diable_dark_mode() {
+        darkmodebtn.innerHTML = '<ion-icon id= "btn" class="click-btn" name="moon-outline"></ion-icon>'
+            localStorage.setItem('theme', 'light');
+            document.body.classList.remove('dark-mode')
+      }
+      window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addListener((e) => (e.matches ? enable_dark_mode() : diable_dark_mode()));
+
     </script>
   </body>
 </html>
